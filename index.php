@@ -26,7 +26,7 @@ if(isset($_SESSION['author_id'])){
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" type="image/x-icon" href="./public/frontend/img/logo/logo2.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="./public/frontend/img/favicon2.png">
         <!-- Place favicon.ico in the root directory -->
 
 		<!-- CSS here -->
@@ -78,6 +78,11 @@ if(isset($_SESSION['author_id'])){
                                             <li class="nav-item"><a class="nav-link" href="#service">service</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#portfolio">portfolio</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                                            <?php if(isset($_SESSION['author_id'])) :?>
+                                            <li class="nav-item"><a class="nav-link" href="./authentication/login.php">Dashboard</a></li>
+                                            <?php else: ?>
+                                            <li class="nav-item"><a class="nav-link" href="./authentication/login.php">Login/Register</a></li>
+                                            <?php endif; ?>
                                         </ul>
                                     </div>
                                     <div class="header-btn">
