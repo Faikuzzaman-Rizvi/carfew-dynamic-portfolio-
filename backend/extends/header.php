@@ -43,6 +43,7 @@ $user = mysqli_fetch_assoc($connect);
     <link href="../../public/backend/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../public/backend/assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
     <link href="../../public/backend/assets/plugins/pace/pace.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     
     <!-- Theme Styles -->
@@ -95,8 +96,8 @@ $user = mysqli_fetch_assoc($connect);
                         <a href="../settings/settings.php"><i class="material-icons-two-tone">settings</i>Settings</a>
                     </li>
 
-                    <li class="<?=($link == 'settings.php') ?'active-page' : '' ?>">
-                        <a href="../settings/settings.php"><i class="material-icons-two-tone">medical_services</i>Services</a>
+                    <li class="<?=($link == 'services.php') ?'active-page' : '' ?>">
+                        <a href="../services/services.php"><i class="material-icons-two-tone">medical_services</i>Services</a>
                     </li>
                     <!-- <li>
                         <a href="calendar.html"><i class="material-icons-two-tone">calendar_today</i>Calendar<span class="badge rounded-pill badge-success float-end">14</span></a>
