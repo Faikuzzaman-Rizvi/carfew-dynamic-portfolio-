@@ -1,6 +1,8 @@
 <?php
+
 include "./config/database.php";
 session_start();
+
 if(isset($_SESSION['author_id'])){
     
     $id = $_SESSION['author_id'];
@@ -29,7 +31,7 @@ $reviews = mysqli_query($db,$reviews_query);
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Kufa - Personal Portfolio</title>
+        <title>Rizvi- Personal Portfolio</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -396,11 +398,13 @@ $reviews = mysqli_query($db,$reviews_query);
                             <div class="col-xl-2 col-lg-3 col-sm-6">
                                 <div class="fact-box text-center mb-50">
                                     <div class="fact-icon">
-                                        <i class="<?= $review['icon']?>""></i>
+                                        <i class="<?= $review['icon']?>"></i>
                                     </div>
                                     <div class="fact-content">
-                                        <h2><span class="count"><?= $review['title']?>"</span></h2>
-                                        <span>Feature Item</span>
+                                        <span><h5><?= $review['title'] ?></h5></span>
+                                        <span><p>
+                                          <?= $review['description']?>
+								         </p></span>
                                     </div>
                                 </div>
                             </div>
@@ -541,7 +545,7 @@ $reviews = mysqli_query($db,$reviews_query);
                     <div class="row align-items-center">
                         <div class="col-12">
                             <div class="copyright-text text-center">
-                                <p>Copyright© <span>Kufa</span> | All Rights Reserved</p>
+                                <p>Copyright© <span>Rizvi</span> | All Rights Reserved</p>
                             </div>
                         </div>
                     </div>

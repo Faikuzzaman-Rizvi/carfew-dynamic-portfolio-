@@ -20,7 +20,7 @@ include '../../public/fonts/fonts.php';
                     <label for="exampleInputEmail1" class="form-label my-2">Service Description</label>
                     <textarea name="description" type="email" class="form-control" rows="5"> </textarea>
                     <label for="exampleInputEmail1" class="form-label my-2">Icon</label>
-                    <input name="icon" type="text" readonly class="form-control" id="hudai" aria-describedby="emailHelp">
+                    <input name="icon" type="text" readonly class="form-control" id="updateicon" aria-describedby="emailHelp">
                     <div class="card my-2">
                         <div class="card-body fa-2x" style="overflow-y: scroll; overflow-x:hidden; height:300px;">
                             <?php foreach ($fonts as $font): ?>
@@ -41,7 +41,7 @@ include '../../public/fonts/fonts.php';
 
 
 <script>
-    $input = document.querySelector('#hudai');
+    $input = document.querySelector('#updateicon');
 
     function myFun(e) {
         $input.value = e.target.classList.value;
@@ -51,7 +51,7 @@ include '../../public/fonts/fonts.php';
 
 <!-- services area -->
 
-<!-- services area -->
+<!-- Reviews area -->
 
 <div class="row">
     <div class="col-12">

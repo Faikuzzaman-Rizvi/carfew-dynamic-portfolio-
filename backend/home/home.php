@@ -30,8 +30,10 @@ $users = mysqli_query($db,$user_query);
 
  <div class="row">
     <div class="col-6">
+        <div class="card">
         <div class="card-header">
             <h4>Users Informations</h4> 
+        </div>
             <div class="card-body">
             <!-- table start -->
             <div class="example-content">
@@ -73,7 +75,7 @@ $users = mysqli_query($db,$user_query);
             <!-- table end -->
         </div>  
         </div>
-        
+        </div>
     </div>
  </div>
                 
