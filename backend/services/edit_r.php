@@ -23,7 +23,7 @@ if(isset($_GET['editid'])){
                 <h4>Reviews Add - <?= $reviews['title'] ?></h4>
             </div>
             <div class="card-body">
-                <form action="store.php?update=<?= $reviews['id'] ?>" method="POST">
+                <form action="store.php?updatebtn=<?= $reviews['id'] ?>" method="POST">
                     <label for="exampleInputEmail1" class="form-label my-2">Reviews Title</label>
                     <input name="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $reviews['title'] ?>">
                     <label for="exampleInputEmail1" class="form-label my-2">Reviews Description</label>
@@ -40,7 +40,7 @@ if(isset($_GET['editid'])){
                         </div>
                     </div>
 
-                    <button type="submit" name="update" class="btn btn-primary mt-3"><i class="material-icons">add</i>create</button>
+                    <button type="submit" name="updatebtn" class="btn btn-primary mt-3"><i class="material-icons">add</i>create</button>
                 </form>
             </div>
         </div>

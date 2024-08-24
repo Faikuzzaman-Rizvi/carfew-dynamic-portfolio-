@@ -120,9 +120,9 @@ $reviews = mysqli_query($db,$reviews_query);
                         <a href="store.php?statusid=<?= $service['id'] ?>" class="<?= ($service['status'] == 'deactive') ? 'badge bg-danger' : 'badge bg-success' ?> text-white"><?= $service['status'] ?></a>
                     </td>
                     <td>
-                        <div class="d-flex justify-content-around align-items-center"> 
+                    <div class="d-flex justify-content-around align-items-center"> 
                             <a href="edit.php?editid=<?= $service['id'] ?>" class="text-primary fa-2x">
-                                <i class="fa fa-chain"></i>
+                                <i class="fa fa-edit"></i>
                             </a>
                             <a href="store.php?deleteid=<?= $service['id'] ?>" class="text-danger fa-2x">
                                 <i class="fa fa-trash-o"></i>
@@ -217,7 +217,7 @@ $reviews = mysqli_query($db,$reviews_query);
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-end">
             <h4>Reviews</h4>
-            <a href="create.php" class="btn btn-primary"><i class="material-icons">add</i>create</a>   
+            <a href="create_r.php" class="btn btn-primary"><i class="material-icons">add</i>create</a>   
             </div>
             <div class="card-body">
             <div class="example-content">
