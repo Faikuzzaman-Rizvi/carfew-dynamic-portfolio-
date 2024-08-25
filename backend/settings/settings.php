@@ -141,6 +141,41 @@ include'../extends/header.php';
 
 <!-- about part end-->
 
+<!-- about part start-->
+
+<!-- <div class="col-6">
+        <div class="card">
+        <div class="card-header">
+            <h4>Number Update:</h4>
+        </div>
+        <form action="settings_manage.php" method="POST">
+         <div class="card-body">
+            <label for="exampleInputEmail" class="from-label">Phone Number</label>
+            <input type="number" name="number" class="form-control form-control-rounded" aria-describedby="..." placeholder="enter your number">
+
+            <!-- name success -->
+            <?php if(isset($_SESSION['number_add'])):?>
+            <div id="emailHelp" class="form-text text-success"><?= $_SESSION['number_add'] ?></div>
+            <?php endif; unset($_SESSION['number_add'])?>
+            <!-- name success -->
+
+            <!-- name error -->
+            <?php if(isset($_SESSION['number_error'])):?>
+            <div id="emailHelp" class="form-text text-danger"><?= $_SESSION['number_error'] ?></div>
+            <?php endif; unset($_SESSION['number_error'])?>
+            <!-- name error -->
+
+
+            <div class="d-grid gap-2">
+            <button class="btn btn-primary mt-4 border-4 rounded-pill" name="number" type="submit">Add</button>
+            </div>
+         </div>
+         </form>
+        </div>
+    </div> -->
+
+<!-- about part end -->
+
 <?php
 
 include'../extends/footer.php';

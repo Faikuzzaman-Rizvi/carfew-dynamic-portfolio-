@@ -34,6 +34,7 @@ if(isset($_POST['updatebtn'])){
 
     header('location: settings.php');
     exit();
+    
 }
 
 if(isset($_POST['updatepassbtn'])){
@@ -126,7 +127,30 @@ if(isset($_POST['about_imagebtn'])){
 
 }
   
-}   
+}  
+
+//phone number add
+
+// if(isset($_POST['number'])){
+//     $number = $_POST['number'];
+//     $id = $_SESSION['author_id'];
+
+//     if($number){
+//         $query = "UPDATE users SET number='$number' WHERE id='$id'";
+//         if(mysqli_query($db,$query)){
+//             $_SESSION['author_number'] = $number;
+//             $_SESSION['number_add'] = 'Number add successfully!';
+//         } else {
+//             $_SESSION['number_error'] = 'Name add failed!';
+//         }
+//     }else {
+//         $_SESSION['number_error'] = "Your number is invalid!";
+
+//     }
+//     header('location: settings.php');
+//     exit();
+    
+// }
 
 
 ?>

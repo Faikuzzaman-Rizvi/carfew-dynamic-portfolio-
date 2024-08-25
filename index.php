@@ -128,7 +128,11 @@ $reviews = mysqli_query($db,$reviews_query);
                     </div>
                     <div class="contact-list mb-30">
                         <h4>Email Address</h4>
-                        <p>info@example.com</p>
+                        <?php if(isset($_SESSION['author_id'])) : ?>
+                        <p><?= $user['email'] ?></p>
+                        <?php else: ?>
+                        <p><?= $user['email'] ?></p>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="social-icon-right mt-20">
@@ -520,7 +524,11 @@ $reviews = mysqli_query($db,$reviews_query);
                                     <ul>
                                         <li><i class="fas fa-map-marker"></i><span>Address :</span>Event Center park WT 22 New York</li>
                                         <li><i class="fas fa-headphones"></i><span>Phone :</span>+9 125 645 8654</li>
-                                        <li><i class="fas fa-globe-asia"></i><span>e-mail :</span>info@exemple.com</li>
+                                        <?php if(isset($_SESSION['author_id'])) : ?>
+                                        <li><i class="fas fa-globe-asia"></i><span>e-mail :</span><?= $user['email'] ?></li>
+                                        <?php else: ?>
+                                        <li><i class="fas fa-globe-asia"></i><span>e-mail :</span><?= $user['email'] ?></li>
+                                        <?php endif; ?>
                                     </ul>
                                 </div>
                             </div>
