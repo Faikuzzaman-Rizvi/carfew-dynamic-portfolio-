@@ -98,6 +98,34 @@ if(isset($_POST['imagebtn'])){
 
 }
   
+} 
+
+//about image upadate
+
+if(isset($_POST['about_imagebtn'])){
+ $image = $_FILES['image_about']['name'];
+ $tmp_path = $_FILES['image_about']['tmp_name'];
+
+
+ if($image){
+    $id = $_SESSION['author_id'];
+    $name = $_SESSION['author_name'];
+    $explode = explode('.',$image);
+    $extention = end($explode);
+   $new_name = $id . "-" . $name . "-" . date("d-m-Y") . "." . $extention;
+   $local_path ="../../public/uploads/about_img/".$new_name;
+
+    if(move_uploaded_file($tmp_path,$local_path)){
+        $query = "UPDATE users SET image_about='$new_name' WHERE id='$id'";
+            if(mysqli_query($db,$query)){
+                header('location: settings.php');
+        }else{
+           echo "kharap";
+        }
+   }
+
+}
+  
 }   
 
 

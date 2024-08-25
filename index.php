@@ -191,7 +191,12 @@ $reviews = mysqli_query($db,$reviews_query);
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="about-img">
-                                <img src="./public/frontend/img/banner/banner_img2.png" title="me-01" alt="me-01">
+                                <!-- <img src="./public/frontend/img/banner/banner_img2.png" title="me-01" alt="me-01"> -->
+                                <?php if($user['image_about'] == 'defult2.png') : ?>
+                                <img src="./public/uploads/about_img/<?= $user['image_about'] ?>" style="width: 650px; height: 750px;" alt="" >
+                                <?php else: ?>
+                                    <img src="./public/uploads/about_img/<?= $user['image_about'] ?>" style="width: 600px; height: 750px;" alt="" >
+                                    <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-lg-6 pr-90">

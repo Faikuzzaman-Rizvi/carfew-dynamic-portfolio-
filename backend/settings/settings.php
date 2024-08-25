@@ -119,6 +119,28 @@ include'../extends/header.php';
 
 <!-- image part end-->
 
+<!-- about part start-->
+
+<div class="col-6">
+        <div class="card">
+        <div class="card-header">
+            <h4>About Image Update:</h4>
+        </div>
+        <form action="settings_manage.php" method="POST" enctype="multipart/form-data">
+         <div class="card-body">
+            <label for="exampleInputEmail" class="from-label">About Picture</label>
+            <input type="file" name="image_about" class="form-control form-control-rounded" aria-describedby="..." placeholder="enter your name">
+
+            <div class="d-grid gap-2">
+            <button class="btn btn-primary mt-4 border-4 rounded-pill" name="about_imagebtn" type="submit">Update</button>
+            </div>
+         </div>
+         </form>
+        </div>
+    </div>
+
+<!-- about part end-->
+
 <?php
 
 include'../extends/footer.php';
