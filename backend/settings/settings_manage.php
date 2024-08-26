@@ -18,7 +18,7 @@ if(isset($_POST['updatebtn'])){
     } else {
         $_SESSION['name_error'] = "Your name is invalid!";
 
-    }
+    } 
 
     if($email){
         $query = "UPDATE users SET email='$email' WHERE id='$id'";
