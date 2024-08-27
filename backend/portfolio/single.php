@@ -22,7 +22,7 @@ if(isset($_GET['singleid'])){
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Kufa - Personal Portfolio HTML5 Template</title>
+        <title>Personal Portfolio</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
