@@ -22,7 +22,7 @@ $services = mysqli_query($db,$services_query);
 $reviews_query = "SELECT * FROM reviews WHERE status='active'";
 $reviews = mysqli_query($db,$reviews_query);
 
-$port_query = "SELECT * FROM portfolios";
+$port_query = "SELECT * FROM portfolios WHERE status='active'";
 $portfolios = mysqli_query($db,$port_query);
 
 
