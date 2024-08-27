@@ -16,7 +16,7 @@ if(isset($_POST['insert'])){
     if($title && $subtitle && $description && $image){
         $newname = $id . '-' . $title . '-' . date('d-m-Y'). '-' .rand(0,9999).'.'.$extention;
 
-        $localpath = '../../public/portfolio/'.$newname;
+        $localpath = '../../public/uploads/portfolio/'.$newname;
 
         if(move_uploaded_file($temp_name,$localpath)){
             $insert_query = "INSERT INTO portfolios (title,subtitle,description,image) VALUE ('$title','$subtitle','$description','$newname')";
@@ -34,6 +34,21 @@ if(isset($_POST['insert'])){
 
 if(isset($_GET['deleteid'])){
     $id = $_GET['deleteid'];
+    $port_query = "SELECT * FROM portfolios WHERE id='$id'";
+    $connect = mysqli_query($db,$port_query);
+    $port = mysqli_fetch_assoc($connect);
+
+    if($port['image']){
+        $oldname = $port['image'];
+        $existspath = '../../public/uploads/portfolio/'.$oldname;
+
+        if(file_exists($existspath)){
+            unlink($existspath);
+        }
+
+
+    }
+
     $delete_query = "DELETE FROM portfolios WHERE id='$id'";
     mysqli_query($db,$delete_query);
     $_SESSION['port_success'] = "Portfolio deleted successfully!";

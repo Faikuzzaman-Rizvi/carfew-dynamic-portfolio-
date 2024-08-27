@@ -4,6 +4,7 @@ include '../extends/header.php';
 
 $portfolio_query = "SELECT * FROM portfolios";
 $portfolios = mysqli_query($db,$portfolio_query);
+$portfolio = mysqli_fetch_assoc($portfolios);
 
 
 
@@ -97,6 +98,11 @@ $portfolios = mysqli_query($db,$portfolio_query);
                 </tr>
             </thead>
             <tbody>
+                <?php if(empty($portfolio)): ?>
+                    <tr>
+                        <td colspan="5" class="text-center text-danger"><h3>No Data Found!!!!</h3></td>
+                    </tr>
+                    <?php else :?>
             <?php 
                 $num = 1;
                 foreach($portfolios as $portfolio): ?>
@@ -106,7 +112,7 @@ $portfolios = mysqli_query($db,$portfolio_query);
                         <?= $num++ ?>
                     </th>
                     <td>
-                         <img style="width: 80px; height: 80px; border-radius:50%;" src="../../public/portfolio/<?= $portfolio['image'] ?>" alt="">
+                         <img style="width: 80px; height: 80px; border-radius:50%;" src="../../public/uploads/portfolio/<?= $portfolio['image'] ?>" alt="">
                     </td>
                     <td>
                         <?= $portfolio['title'] ?>
@@ -125,7 +131,7 @@ $portfolios = mysqli_query($db,$portfolio_query);
                         </div>
                     </td>
                 </tr>
-                <?php endforeach; ?>
+                <?php endforeach; endif; ?>
             </tbody>
         </table>
     </div>
