@@ -4,12 +4,25 @@ include'../extends/header.php';
 
 ?>
 
+
 <div class="row">
 <div class="col">
-      <div class="page-description">
-         <h1>Settings</h1>
-     </div>
- </div>
+    <div class="page-description page-description-tabbed">
+        <h1>Settings</h1>
+
+        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account" type="button" role="tab" aria-controls="hoaccountme" aria-selected="false">Account</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button" role="tab" aria-controls="security" aria-selected="false">Security</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="integrations-tab" data-bs-toggle="tab" data-bs-target="#integrations" type="button" role="tab" aria-controls="integrations" aria-selected="true">Integrations</button>
+            </li>
+        </ul>
+    </div>
+</div>
 </div>
 
 <div class="row">
