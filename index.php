@@ -25,6 +25,10 @@ $reviews = mysqli_query($db,$reviews_query);
 $port_query = "SELECT * FROM portfolios WHERE status='active'";
 $portfolios = mysqli_query($db,$port_query);
 
+$edu_query = "SELECT * FROM educations WHERE status='active'";
+$educations = mysqli_query($db,$edu_query);
+
+
 
 ?>
 
@@ -159,7 +163,7 @@ $portfolios = mysqli_query($db,$port_query);
                     <div class="row align-items-center">
                         <div class="col-xl-7 col-lg-6">
                             <div class="banner-content">
-                                <h6 class="wow fadeInUp" data-wow-delay="0.2s">HELLO!</h6>
+                                <h6 class="wow fadeInUp" data-wow-delay="0.2s">Assalamu-Alykum!</h6>
                                 <?php if(isset($_SESSION['author_id'])) : ?>
                                 <h2 class="wow fadeInUp" data-wow-delay="0.4s"> I am <?= $user['name'] ?></h2>
                                 <?php else:?>
@@ -212,68 +216,29 @@ $portfolios = mysqli_query($db,$port_query);
                                 <h2>About Me</h2>
                             </div>
                             <div class="about-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, sed repudiandae odit deserunt, quas
-                                    quibusdam necessitatibus nesciunt eligendi esse sit non reprehenderit quisquam asperiores maxime
-                                    blanditiis culpa vitae velit. Numquam!</p>
+                                <p>Diploma in Computer Science and Engineering<br>
+                                [Kushtia Polytechnic Institute]<br>
+                                [2020-2024]<br>
+                                During my diploma in Computer Science and Engineering, I have gained a strong foundation in various programming languages, software development methodologies, and system design principles. My coursework has included extensive hands-on projects, where I applied theoretical knowledge to real-world problems. Through these experiences, I've developed a deep understanding of web and app development, particularly with PHP and Laravel. My education has equipped me with both the technical skills and problem-solving abilities necessary to thrive in the field of technology.
+
+                                </p>
                                 <h3>Education:</h3>
                             </div>
                             <!-- Education Item -->
+                            <?php foreach($educations as $education) : ?>
                             <div class="education">
-                                <div class="year">2020</div>
+                                <div class="year"><?= $education['year'] ?></div>
                                 <div class="line"></div>
                                 <div class="location">
-                                    <span>PHD of Interaction Design &amp; Animation</span>
+                                    <span><?= $education['information'] ?></span>
                                     <div class="progressWrapper">
                                         <div class="progress">
-                                            <div class="progress-bar wow slideInLefts" data-wow-delay="0.2s" data-wow-duration="2s" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar wow slideInLefts" data-wow-delay="0.2s" data-wow-duration="2s" role="progressbar" style="width: 95%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- End Education Item -->
-                            <!-- Education Item -->
-                            <div class="education">
-                                <div class="year">2016</div>
-                                <div class="line"></div>
-                                <div class="location">
-                                    <span>Master of Database Administration</span>
-                                    <div class="progressWrapper">
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLefts" data-wow-delay="0.2s" data-wow-duration="2s" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Education Item -->
-                            <!-- Education Item -->
-                            <div class="education">
-                                <div class="year">2010</div>
-                                <div class="line"></div>
-                                <div class="location">
-                                    <span>Bachelor of Computer Engineering</span>
-                                    <div class="progressWrapper">
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLefts" data-wow-delay="0.2s" data-wow-duration="2s" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
-                                                aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Education Item -->
-                            <!-- Education Item -->
-                            <div class="education">
-                                <div class="year">2005</div>
-                                <div class="line"></div>
-                                <div class="location">
-                                    <span>Diploma of Computer</span>
-                                    <div class="progressWrapper">
-                                        <div class="progress">
-                                            <div class="progress-bar wow slideInLefts" data-wow-delay="0.2s" data-wow-duration="2s" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0"
-                                                aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
                             <!-- End Education Item -->
                         </div>
                     </div>

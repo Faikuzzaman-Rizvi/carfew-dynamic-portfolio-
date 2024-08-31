@@ -11,14 +11,8 @@ include'../extends/header.php';
         <h1>Settings</h1>
 
         <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account" type="button" role="tab" aria-controls="hoaccountme" aria-selected="false">Account</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button" role="tab" aria-controls="security" aria-selected="false">Security</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="integrations-tab" data-bs-toggle="tab" data-bs-target="#integrations" type="button" role="tab" aria-controls="integrations" aria-selected="true">Integrations</button>
+            <li class="nav-item" role="presentation" >
+                <a href="education.php" style="text-decoration:none;"><button class="nav-link" id="account-tab" data-bs-target="#account" type="button" role="tab" aria-controls="hoaccountme" aria-selected="false">Education</button></a>
             </li>
         </ul>
     </div>
@@ -143,7 +137,6 @@ include'../extends/header.php';
          <div class="card-body">
             <label for="exampleInputEmail" class="from-label">About Picture</label>
             <input type="file" name="image_about" class="form-control form-control-rounded" aria-describedby="..." placeholder="enter your name">
-
             <div class="d-grid gap-2">
             <button class="btn btn-primary mt-4 border-4 rounded-pill" name="about_imagebtn" type="submit">Update</button>
             </div>

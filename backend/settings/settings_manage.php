@@ -129,6 +129,7 @@ if(isset($_POST['about_imagebtn'])){
   
 }  
 
+
 //phone number add
 
 // if(isset($_POST['number'])){
@@ -151,6 +152,45 @@ if(isset($_POST['about_imagebtn'])){
 //     exit();
     
 // }
+
+
+//?Education part..
+
+if(isset($_POST['insert'])){
+    $year = $_POST['year'];
+    $information = $_POST['information'];
+
+    if($year && $information){
+        $query = "INSERT INTO educations (year,information) VALUES ('$year','$information')";
+        mysqli_query($db,$query);
+        $_SESSION['edu_insert'] = "Education Informations Insert Successfully COmplete";
+        header('location: education.php');
+    }
+}
+
+//?status id
+if(isset($_GET['statusid'])){
+    $id = $_GET['statusid'];
+
+    $getQuery = "SELECT * FROM educations WHERE id='$id'";
+    $connect = mysqli_query($db,$getQuery);
+    $education = mysqli_fetch_assoc($connect);
+
+
+    if($education['status'] == 'deactive'){
+        $update_query = "UPDATE educations SET status='active' WHERE id='$id'";
+        mysqli_query($db,$update_query);
+        $_SESSION['edu_status'] = "Education Status Successfully Complete"; 
+        header('location: education.php');
+    }else{
+        $update_query = "UPDATE educations SET status='deactive' WHERE id='$id'";
+        mysqli_query($db,$update_query);
+        $_SESSION['edu_status'] = "Education Status Successfully Complete"; 
+        header('location: education.php');
+    }
+}
+
+
 
 
 ?>
