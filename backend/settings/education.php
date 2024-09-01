@@ -37,6 +37,36 @@ $educations = mysqli_query($db,$edu_query);
 </div>
 <?php endif; unset($_SESSION['edu_status']) ?>
 
+<?php if(isset($_SESSION['edu_edit'])): ?>
+<div class="row">
+    <div class="col-12">
+        <div class="alert alert-custom" role="alert">
+            <div class="custom-alert-icon icon-success"><i class="material-icons-outlined">done</i></div>
+            <div class="alert-content">
+                <span class="alert-title">
+                    <?= $_SESSION['edu_edit'] ?>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; unset($_SESSION['edu_edit']) ?>
+
+<?php if(isset($_SESSION['edu_delete'])): ?>
+<div class="row">
+    <div class="col-12">
+        <div class="alert alert-custom" role="alert">
+            <div class="custom-alert-icon icon-success"><i class="material-icons-outlined">done</i></div>
+            <div class="alert-content">
+                <span class="alert-title">
+                    <?= $_SESSION['edu_delete'] ?>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; unset($_SESSION['edu_delete']) ?>
+
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -77,10 +107,10 @@ $educations = mysqli_query($db,$edu_query);
                     </td>
                     <td>
                     <div class="d-flex justify-content-around align-items-center"> 
-                            <a href="edit.php?editid=<?= $education['id'] ?>" class="text-primary fa-2x">
+                            <a href="edu_edit.php?editid=<?= $education['id'] ?>" class="text-primary fa-2x">
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <a href="store.php?deleteid=<?= $education['id'] ?>" class="text-danger fa-2x">
+                            <a href="settings_manage.php?deleteid=<?= $education['id'] ?>" class="text-danger fa-2x">
                                 <i class="fa fa-trash-o"></i>
                             </a>
                         </div>

@@ -191,6 +191,33 @@ if(isset($_GET['statusid'])){
 }
 
 
+//?edit part...
+
+if(isset($_POST['update'])){
+    if(isset($_GET['update'])){
+        $id = $_GET['update'];
+
+        $year = $_POST['year'];
+        $information = $_POST['information'];
+    
+        if($year && $information){
+            $query_update = "UPDATE educations SET year='$year',information='$information' WHERE id='$id'";
+            mysqli_query($db,$query_update);
+            $_SESSION['edu_edit'] = "Education Informations Update Successfully Complete"; 
+            header('location: education.php');
+        }
+    }
+}
+
+
+//?delete id..
+if(isset($_GET['deleteid'])){
+    $id = $_GET['deleteid'];
+    $delete_query = "DELETE FROM educations WHERE id='$id'";
+    mysqli_query($db,$delete_query);
+    $_SESSION['edu_delete'] = "education information Delete Successfully Complete"; 
+    header('location: education.php');
+}
 
 
 ?>

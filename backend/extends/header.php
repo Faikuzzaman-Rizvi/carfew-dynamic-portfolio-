@@ -44,6 +44,7 @@ $user = mysqli_fetch_assoc($connect);
     <link href="../../public/backend/assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
     <link href="../../public/backend/assets/plugins/pace/pace.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 
     
     <!-- Theme Styles -->
@@ -206,7 +207,8 @@ $user = mysqli_fetch_assoc($connect);
                         <div class="d-flex">
                             <ul class="navbar-nav">
                                 <li class="nav-item hidden-on-mobile">
-                                    <a class="nav-link btn btn-danger btn-sm text-white " href="../logout/logout.php">logout</a>
+                                    <a class="nav-link btn btn-danger btn-sm text-white " href="../logout/logout.php">LogOut</a>
+                                    <!-- <a style="font-size:14px; font:bold; display:flex; gap:11px; width:91px; color:white;     background-color:#0d4efd; border-radius:10px" class="nav-link btn " href="../logout/logout.php">LogOut<i style="margin-top: 2px;" class="fa-solid fa-person-walking-luggage"></i></a> -->
                                 </li>
                                 
                             </ul>
