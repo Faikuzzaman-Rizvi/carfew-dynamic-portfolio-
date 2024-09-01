@@ -97,6 +97,7 @@ $portfolios = mysqli_query($db,$portfolio_query);
                     <th scope="col">Image</th>
                     <th scope="col">Title</th>
                     <th scope="col">Subtitle</th>
+                    <th scope="col">Description</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -123,6 +124,9 @@ $portfolios = mysqli_query($db,$portfolio_query);
                     </td>
                     <td>
                         <?= $portfolio['subtitle'] ?>
+                    </td>
+                    <td>
+                        <?= $portfolio['description'] ?>
                     </td>
                     <td>
                         <a href="store.php?statusid=<?= $portfolio['id'] ?>" class="<?= ($portfolio['status'] == 'deactive') ? 'badge bg-danger' : 'badge bg-success' ?> text-white"><?= $portfolio['status'] ?></a>

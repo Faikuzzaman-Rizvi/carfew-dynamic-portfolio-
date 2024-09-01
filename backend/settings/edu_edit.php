@@ -21,9 +21,9 @@ if(isset($_GET['editid'])){
             <div class="card-body">
                 <form action="settings_manage.php?update=<?= $education['id'] ?>" method="POST">
                     <label for="exampleInputEmail1" class="form-label my-2">Year Add</label>
-                    <input name="year" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input name="year" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $education['year'] ?>">
                     <label for="exampleInputEmail1" class="form-label my-2">Informations Add</label>
-                    <input name="information" type="text" class="form-control" rows="5"> </input>
+                    <input name="information" type="text" class="form-control" rows="5" value="<?= $education['information'] ?>">
 
                     <button type="submit" name="update" class="btn btn-primary mt-3"><i class="material-icons">add</i>create</button>
                 </form>

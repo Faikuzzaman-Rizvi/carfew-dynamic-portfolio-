@@ -49,7 +49,7 @@ if(isset($_POST['insertbtn'])){
              $localpath = '../../public/uploads/portfolio/'.$newname;
     
             if(move_uploaded_file($temp_name,$localpath)){
-            $query_update = "UPDATE portfolios SET title='$title',description='$description',image='$newname' WHERE id='$id'";
+            $query_update = "UPDATE portfolios SET title='$title',subtitle='$subtitle',description='$description',image='$newname' WHERE id='$id'";
             mysqli_query($db,$query_update);
             $_SESSION['port_edit'] = "portfolio Update Successfully Complete"; 
             header('location: portfolios.php');
