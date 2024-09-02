@@ -106,7 +106,7 @@ $user = mysqli_fetch_assoc($connect);
                     </li>
 
                     <li class="<?=($link == 'quotes.php') ?'active-page' : '' ?>">
-                        <a href="../quotes/quotes.php"><i class="material-icons-two-tone">reviews_services</i>Quotes</a>
+                        <a href="../quotes/quotes.php"><i class="material-icons-two-tone">comment</i>Quotes</a>
                     </li>
                     <!-- <li>
                         <a href="calendar.html"><i class="material-icons-two-tone">calendar_today</i>Calendar<span class="badge rounded-pill badge-success float-end">14</span></a>
