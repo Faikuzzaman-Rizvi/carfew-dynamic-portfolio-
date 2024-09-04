@@ -219,5 +219,6 @@ if(isset($_GET['deleteid'])){
     header('location: education.php');
 }
 
+//nothing...
 
 ?>
