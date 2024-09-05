@@ -108,6 +108,10 @@ $user = mysqli_fetch_assoc($connect);
                     <li class="<?=($link == 'quotes.php') ?'active-page' : '' ?>">
                         <a href="../quotes/quotes.php"><i class="material-icons-two-tone">comment</i>Quotes</a>
                     </li>
+
+                    <li class="<?=($link == 'company.php') ?'active-page' : '' ?>">
+                        <a href="../company/company.php"><i style="font-size: 25px;" class="fa fa-google-wallet"></i>company</a>
+                    </li>
                     <!-- <li>
                         <a href="calendar.html"><i class="material-icons-two-tone">calendar_today</i>Calendar<span class="badge rounded-pill badge-success float-end">14</span></a>
                     </li>

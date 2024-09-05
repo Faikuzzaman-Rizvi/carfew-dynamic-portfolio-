@@ -31,6 +31,9 @@ $educations = mysqli_query($db,$edu_query);
 $quote_query = "SELECT * FROM quotes WHERE status='active'";
 $quotes = mysqli_query($db,$quote_query);
 
+$company_query = "SELECT * FROM companys WHERE status='active'";
+$logos = mysqli_query($db,$company_query);
+
 
 
 ?>
@@ -261,7 +264,7 @@ $quotes = mysqli_query($db,$quote_query);
                         <div class="col-xl-6 col-lg-8">
                             <div class="section-title text-center mb-70">
                                 <span>WHAT WE DO</span>
-                                <h2>Services and Solutions</h2>
+                                <h2>Services & Solutions</h2>
                             </div>
                         </div>
                     </div>
@@ -380,44 +383,22 @@ $quotes = mysqli_query($db,$quote_query);
                 </div>
             </section>
             <!-- testimonial-area-end -->
-
+            
             <!-- brand-area -->
             <div class="barnd-area pt-100 pb-100">
                 <div class="container">
                     <div class="row brand-active">
+                        <?php foreach($logos as $logo):?>
                         <div class="col-xl-2">
                             <div class="single-brand">
-                                <img src="./public/frontend/img/brand/brand_img01.png" alt="img">
+                                <img src="./public/uploads/company_logo/<?= $logo['image'] ?>" alt="img" style="width: 100px; height: 100px; border-radius:50%;">
                             </div>
                         </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                <img src="./public/frontend/img/brand/brand_img02.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                <img src="./public/frontend/img/brand/brand_img03.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                <img src="./public/frontend/img/brand/brand_img04.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                <img src="./public/frontend/img/brand/brand_img05.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                <img src="./public/frontend/img/brand/brand_img03.png" alt="img">
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
+
             <!-- brand-area-end -->
 
             <!-- contact-area -->
