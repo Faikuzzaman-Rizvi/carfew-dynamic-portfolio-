@@ -134,7 +134,11 @@ $quotes = mysqli_query($db,$quote_query);
                     </div>
                     <div class="contact-list mb-30">
                         <h4>Phone Number</h4>
-                        <p>+0989 7876 9865 9</p>
+                        <?php if(isset($_SESSION['author_id'])) : ?>
+                        <p><?= $user['number'] ?></p>
+                        <?php else: ?>
+                        <p><?= $user['number'] ?></p>
+                        <?php endif; ?>
                     </div>
                     <div class="contact-list mb-30">
                         <h4>Email Address</h4>
@@ -172,7 +176,7 @@ $quotes = mysqli_query($db,$quote_query);
                                 <?php else:?>
                                 <h2 class="wow fadeInUp" data-wow-delay="0.4s">I am <?= $user['name'] ?></h2>
                                 <?php endif; ?>
-                                <p class="wow fadeInUp" data-wow-delay="0.6s">I'm <?= $user['name'] ?>, professional web developer with long time experience in this field​.</p>
+                                <p class="wow fadeInUp" data-wow-delay="0.6s">I'm <?= $user['name'] ?> <?= $user['description'] ?></p>
                                 <div class="banner-social wow fadeInUp" data-wow-delay="0.8s">
                                     <ul>
                                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -186,8 +190,9 @@ $quotes = mysqli_query($db,$quote_query);
                         </div>
                         <div class="col-xl-5 col-lg-6 d-none d-lg-block">
                             <div class="banner-img text-right">
+                                
                             <?php if($user['image'] == 'defult.jpeg') : ?>
-                                <img src="./public/uploads/profile/<?= $user['image'] ?>" style="width: 650px; height: 820px;" alt="" >
+                                <img src="./public/uploads/defult/<?= $user['image'] ?>" style="width: 650px; height: 820px;" alt="<?= $user['image'] ?>" >
                                 <?php else: ?>
                                     <img src="./public/uploads/profile/<?= $user['image'] ?>" style="width: 650px; height: 820px;" alt="" >
                                     <?php endif; ?>
@@ -207,7 +212,7 @@ $quotes = mysqli_query($db,$quote_query);
                             <div class="about-img">
                                 <!-- <img src="./public/frontend/img/banner/banner_img2.png" title="me-01" alt="me-01"> -->
                                 <?php if($user['image_about'] == 'defult2.png') : ?>
-                                <img src="./public/uploads/about_img/<?= $user['image_about'] ?>" style="width: 650px; height: 750px;" alt="" >
+                                <img src="./public/uploads/defult/<?= $user['image_about'] ?>" style="width: 650px; height: 750px;" alt="" >
                                 <?php else: ?>
                                     <img src="./public/uploads/about_img/<?= $user['image_about'] ?>" style="width: 600px; height: 750px;" alt="" >
                                     <?php endif; ?>
@@ -218,13 +223,13 @@ $quotes = mysqli_query($db,$quote_query);
                                 <span>Introduction</span>
                                 <h2>About Me</h2>
                             </div>
+                            <?php foreach($educations as $education) : ?>
                             <div class="about-content">
-                                <p>Diploma in Computer Science and Engineering<br>
-                                [Kushtia Polytechnic Institute]<br>
-                                [2020-2024]<br>
-                                During my diploma in Computer Science and Engineering, I have gained a strong foundation in various programming languages, software development methodologies, and system design principles. My coursework has included extensive hands-on projects, where I applied theoretical knowledge to real-world problems. Through these experiences, I've developed a deep understanding of web and app development, particularly with PHP and Laravel. My education has equipped me with both the technical skills and problem-solving abilities necessary to thrive in the field of technology.
+                                
+                            <p> <?= $education['description'] ?></p>
 
-                                </p>
+                            <?php endforeach; ?>
+                                
                                 <h3>Education:</h3>
                             </div>
                             <!-- Education Item -->
@@ -236,7 +241,7 @@ $quotes = mysqli_query($db,$quote_query);
                                     <span><?= $education['information'] ?></span>
                                     <div class="progressWrapper">
                                         <div class="progress">
-                                            <div class="progress-bar wow slideInLefts" data-wow-delay="0.2s" data-wow-duration="2s" role="progressbar" style="width: 95%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar wow slideInLefts" data-wow-delay="0.2s" data-wow-duration="2s" role="progressbar" style="width:<?= $education['activity'] ?>;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -429,8 +434,18 @@ $quotes = mysqli_query($db,$quote_query);
                                 <h5>OFFICE IN <span>NEW YORK</span></h5>
                                 <div class="contact-list">
                                     <ul>
-                                        <li><i class="fas fa-map-marker"></i><span>Address :</span>Event Center park WT 22 New York</li>
-                                        <li><i class="fas fa-headphones"></i><span>Phone :</span>+9 125 645 8654</li>
+                                        <?php if(isset($_SESSION['author_id'])) : ?>
+                                        <li><i class="fas fa-map-marker"></i><span>Address :</span><?= $user['address'] ?></li>
+                                        <?php else: ?>
+                                            <li><i class="fas fa-map-marker"></i><span>Address :</span><?= $user['address'] ?></li>
+                                        <?php endif; ?>
+
+                                        <?php if(isset($_SESSION['author_id'])) : ?>
+                                        <li><i class="fas fa-headphones"></i><span>Phone :</span><?= $user['number'] ?></li>
+                                        <?php else: ?>
+                                            <li><i class="fas fa-headphones"></i><span>Phone :</span><?= $user['number'] ?></li>
+                                        <?php endif; ?>
+
                                         <?php if(isset($_SESSION['author_id'])) : ?>
                                         <li><i class="fas fa-globe-asia"></i><span>e-mail :</span><?= $user['email'] ?></li>
                                         <?php else: ?>
