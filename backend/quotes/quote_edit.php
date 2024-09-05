@@ -24,6 +24,8 @@ if(isset($_GET['editid'])){
                 <form action="quote_manage.php?update=<?= $quote['id'] ?>" method="POST" enctype="multipart/form-data">
                 <label for="exampleInputEmail1" class="form-label my-2">Customer Name</label>
                 <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $quote['name'] ?>">
+                <label for="exampleInputEmail1" class="form-label my-2">Customer Position</label>
+                <input name="position" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $quote['position'] ?>">
                     <label for="exampleInputEmail1" class="form-label my-2">Customer Quotes</label>
                     <textarea name="quote" type="text" class="form-control" rows="5"><?= $quote['quote'] ?></textarea>
                     <picture class="d-block my-4">

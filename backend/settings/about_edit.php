@@ -13,7 +13,7 @@ if(isset($_GET['editid'])){
 
 
 <div class="row">
-    <div class="col-12">
+    <div class="col-full">
         <div class="card">
             <div class="card-header">
                 <h4>About Informations Add</h4>

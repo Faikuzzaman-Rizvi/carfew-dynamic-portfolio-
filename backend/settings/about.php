@@ -9,7 +9,7 @@ $educations = mysqli_query($db,$edu_query);
 
 <!-- about part start-->
 
-<div class="col-6">
+<div class="col-full">
         <div class="card">
         <div class="card-header">
             <h4>About Image Update:</h4>
@@ -104,11 +104,11 @@ $educations = mysqli_query($db,$edu_query);
 <?php endif; unset($_SESSION['edu_delete']) ?>
 
 <div class="row">
-    <div class="col-12">
+    <div class="col-full">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-end">
                 <h4>About Informations</h4>
-                <a href="edu_create.php" class="btn btn-primary"><i class="material-icons">add</i>create</a>   
+                <a href="about_create.php" class="btn btn-primary"><i class="material-icons">add</i>create</a>   
             </div>
             <div class="card-body">
             <div class="example-content">
@@ -151,7 +151,7 @@ $educations = mysqli_query($db,$edu_query);
                     </td>
                     <td>
                     <div class="d-flex justify-content-around align-items-center"> 
-                            <a href="edu_edit.php?editid=<?= $education['id'] ?>" class="text-primary fa-2x">
+                            <a href="about_edit.php?editid=<?= $education['id'] ?>" class="text-primary fa-2x">
                                 <i class="fa fa-edit"></i>
                             </a>
                             <a href="settings_manage.php?deleteid=<?= $education['id'] ?>" class="text-danger fa-2x">

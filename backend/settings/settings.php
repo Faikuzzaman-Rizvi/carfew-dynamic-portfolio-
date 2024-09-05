@@ -11,6 +11,10 @@ include'../extends/header.php';
         <h1>Settings</h1>
 
         <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button" role="tab" aria-controls="security" aria-selected="true">Security</button>
+            </li>
+
             <li class="nav-item" role="presentation" >
                 <a href="profile.php" style="text-decoration:none;"><button class="nav-link" id="account-tab" data-bs-target="#account" type="button" role="tab" aria-controls="hoaccountme" aria-selected="false">Profile</button></a>
             </li>
@@ -24,7 +28,7 @@ include'../extends/header.php';
 </div>
 
 
-    <div class="col-6">
+    <div class="col-full">
         <div class="card">
         <div class="card-header">
             <h4>Password Update:</h4>
@@ -32,15 +36,15 @@ include'../extends/header.php';
         <form action="settings_manage.php" method="POST">
          <div class="card-body">
             <label for="exampleInputEmail" class="from-label">Current Password </label>
-            <input type="password" name="old_password" class="form-control form-control-rounded" aria-describedby="..." placeholder="enter your current password">
+            <input type="password" name="old_password" class="form-control" aria-describedby="..." placeholder="enter your current password">
 
 
             <label for="exampleInputEmail" class="from-label mt-2">Password</label>
-            <input type="password" name="new_password" class="form-control form-control-rounded" aria-describedby="..." placeholder="enter your password">
+            <input type="password" name="new_password" class="form-control" aria-describedby="..." placeholder="enter your password">
 
              
             <label for="exampleInputEmail" class="from-label mt-2">Confirm Password</label>
-            <input type="password" name="con_password" class="form-control form-control-rounded " aria-describedby="" placeholder="enter your confirm password">
+            <input type="password" name="con_password" class="form-control" aria-describedby="" placeholder="enter your confirm password">
 
                 <!-- password success -->
             <?php if(isset($_SESSION['pass_success'])):?>
@@ -55,7 +59,7 @@ include'../extends/header.php';
             <!-- password error -->
 
             <div class="d-grid gap-2">
-            <button class="btn btn-primary mt-4 border-4 rounded-pill" name="updatepassbtn" type="submit">Update</button>
+            <button class="btn btn-primary mt-4 border-4" name="updatepassbtn" type="submit">Update</button>
             </div>
          </div>
          </form>

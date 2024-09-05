@@ -7,7 +7,7 @@ include'../extends/header.php';
 
 <!-- image part start-->
 
-<div class="col-6">
+<div class="col-full">
         <div class="card">
         <div class="card-header">
             <h4>Profile Image Update:</h4>

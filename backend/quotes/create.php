@@ -17,6 +17,8 @@ include '../../public/fonts/fonts.php';
                 <form action="quote_manage.php" method="POST" enctype="multipart/form-data">
                 <label for="exampleInputEmail1" class="form-label my-2">Customer Name</label>
                 <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="exampleInputEmail1" class="form-label my-2">Customer Position</label>
+                <input name="position" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     <label for="exampleInputEmail1" class="form-label my-2">Customer Quotes</label>
                     <textarea name="quote" type="text" class="form-control" rows="5"> </textarea>
                     <picture class="d-block my-4">

@@ -369,7 +369,7 @@ $quotes = mysqli_query($db,$quote_query);
                                         <h4><span>“</span> <?= $quote['quote']?> <span>”</span></h4>
                                         <div class="testi-avatar-info">
                                             <h5><?= $quote['name']?></h5>
-                                            <span>head of idea</span>
+                                            <span><?= $quote['position']?></span>
                                         </div>
                                     </div>
                                 </div>

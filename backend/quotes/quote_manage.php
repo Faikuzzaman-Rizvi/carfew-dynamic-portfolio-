@@ -8,6 +8,7 @@ if(isset($_POST['insert'])){
     $id= $_SESSION['author_id'];
     $name = $_POST['name'];
     $quote = $_POST['quote'];
+    $position = $_POST['position'];
     $image = $_FILES['image']['name'];
     $explode = explode('.', $image);
     $extension = end($explode);
@@ -19,7 +20,7 @@ if(isset($_POST['insert'])){
         $localpath = '../../public/uploads/customer_img/' . $newname;
 
         if(move_uploaded_file($temp_name, $localpath)){
-            $insert_query = "INSERT INTO quotes (name,quote,image) VALUES ('$name','$quote', '$newname')";
+            $insert_query = "INSERT INTO quotes (name,quote,position,image) VALUES ('$name','$quote','$position', '$newname')";
 
             mysqli_query($db,$insert_query);
 
@@ -38,6 +39,7 @@ if(isset($_POST['insertbtn'])){
 
         $name = $_POST['name'];
         $quote = $_POST['quote'];
+        $position = $_POST['position'];
         $image = $_FILES['image']['name'];
         $explode = explode('.', $image);
         $extension = end($explode);
@@ -49,7 +51,7 @@ if(isset($_POST['insertbtn'])){
         $localpath = '../../public/uploads/customer_img/' . $newname;
 
         if(move_uploaded_file($temp_name, $localpath)){
-            $query_update = "UPDATE quotes SET name='$name',quote='$quote',image='$newname' WHERE id='$id'";
+            $query_update = "UPDATE quotes SET name='$name',quote='$quote',position='$position',image='$newname' WHERE id='$id'";
             mysqli_query($db,$query_update);
 
             $_SESSION['quote_edit'] = "customer Quotes Update Successfully Complete"; 
