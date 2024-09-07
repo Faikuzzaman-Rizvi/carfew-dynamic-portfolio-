@@ -39,6 +39,7 @@ $user = mysqli_fetch_assoc($connect);
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <link href="../../public/backend/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../public/backend/assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
@@ -84,36 +85,36 @@ $user = mysqli_fetch_assoc($connect);
                         Apps
                     </li>
                     <li>
-                        <a target="_blank" href="../../index.php" class="active"><i class="material-icons-two-tone">visibility</i>Visibility</a>
+                        <a target="_blank" href="../../index.php" class="active"><i style="font-size: 25px;" class="fa-solid fa-person-rifle"></i>Portfolio</a>
                     </li> 
 
                     <li class="<?=($link == 'home.php') ?'active-page' : '' ?>">
-                        <a href="../home/home.php" class="active"><i class="material-icons-two-tone">dashboard</i>Dashboard</a>
+                        <a href="../home/home.php" class="active"><i style="font-size: 25px;" class="fa-brands fa-slack"></i>Dashboard</a>
                      </li>
                     <!-- <li>
                         <a href="mailbox.html"><i class="material-icons-two-tone">inbox</i>Mailbox<span class="badge rounded-pill badge-danger float-end">87</span></a>
                     </li>  -->
                     <li class="<?=($link == 'settings.php') ?'active-page' : '' ?>">
-                        <a href="../settings/settings.php"><i class="material-icons-two-tone">settings</i>Settings</a>
+                        <a href="../settings/settings.php"><i style="font-size: 25px;" class="fa-solid fa-screwdriver-wrench"></i>Settings</a>
                     </li>
 
                     <li class="<?=($link == 'services.php') ?'active-page' : '' ?>">
-                        <a href="../services/services.php"><i class="material-icons-two-tone">medical_services</i>Services</a>
+                        <a href="../services/services.php"><i style="font-size: 25px;" class="fa-solid fa-satellite-dish"></i>Services</a>
                     </li>
                     
                     <li class="<?=($link == 'portfolios.php') ?'active-page' : '' ?>">
-                        <a href="../portfolio/portfolios.php"><i class="material-icons-two-tone">design_services</i>Portfolios</a>
+                        <a href="../portfolio/portfolios.php"><i style="font-size: 25px;" class="fa-brands fa-slideshare"></i>Portfolios</a>
                     </li>
 
                     <li class="<?=($link == 'quotes.php') ?'active-page' : '' ?>">
-                        <a href="../quotes/quotes.php"><i class="material-icons-two-tone">comment</i>Quotes</a>
+                        <a href="../quotes/quotes.php"><i style="font-size: 25px;"class="fa-solid fa-comment-dots"></i>Quotes</a>
                     </li>
 
                     <li class="<?=($link == 'company.php') ?'active-page' : '' ?>">
-                        <a href="../company/company.php"><i style="font-size: 25px;" class="fa fa-google-wallet"></i>company</a>
+                        <a href="../company/company.php"><i style="font-size: 25px;" class="fa-brands fa-r-project"></i>company</a>
                     </li>
-                    <li class="<?=($link == 'company.php') ?'active-page' : '' ?>">
-                        <a href="../company/company.php"><i style="font-size: 25px;" class="fa fa-commenting"></i>Contact</a>
+                    <li class="<?=($link == 'email.php.php') ?'active-page' : '' ?>">
+                        <a href="../email/email.php"><i style="font-size: 25px;" class="fa-solid fa-file-signature"></i>Contact</a>
                     </li>
                     <!-- <li>
                         <a href="calendar.html"><i class="material-icons-two-tone">calendar_today</i>Calendar<span class="badge rounded-pill badge-success float-end">14</span></a>
@@ -216,11 +217,10 @@ $user = mysqli_fetch_assoc($connect);
                             </ul>
             
                         </div>
-                        <div class="d-flex">
+                        <div class="d-flex gap-2">
                             <ul class="navbar-nav">
                                 <li class="nav-item hidden-on-mobile">
-                                    <a class="nav-link btn btn-danger btn-sm text-white " href="../logout/logout.php">LogOut</a>
-                                    <!-- <a style="font-size:14px; font:bold; display:flex; gap:11px; width:91px; color:white;     background-color:#0d4efd; border-radius:10px" class="nav-link btn " href="../logout/logout.php">LogOut<i style="margin-top: 2px;" class="fa-solid fa-person-walking-luggage"></i></a> -->
+                                    <a style="display:flex; gap:10px;" class="nav-link btn btn-danger btn-sm text-white fa-solid" href="../logout/logout.php">LogOut<i style="margin-top: 4px;" class="fa-solid fa-person-walking-luggage"></i></a>
                                 </li>
                                 
                             </ul>

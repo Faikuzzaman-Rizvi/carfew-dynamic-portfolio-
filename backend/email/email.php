@@ -1,56 +1,40 @@
- <?php
+<?php
+
 
 include "../extends/header.php";
 
-$user_query = "SELECT * FROM users";
+$email_query = "SELECT * FROM emails";
 
-$users = mysqli_query($db,$user_query);
-
+$emails = mysqli_query($db,$email_query);
 ?>
-
-
 <div class="row">
 <div class="col">
       <div class="page-description">
-         <h1>Dashboard</h1>
+         <h1>Email Details</h1>
      </div>
  </div></div>
 
- <div class="row">
-    <div class="col">
-        <?php if(isset($_SESSION['temp_name'])):?>
-    <div class="alert alert-custom" role="alert">
-     <div class="custom-alert-icon icon-dark"><i class="material-icons-outlined">done</i></div>
-        <div class="alert-content">
-         <span class="alert-title">welcome <?php echo $_SESSION['author_name'];?></span>
-         <span class="alert-text">your email is <?php echo $_SESSION['author_email'];?></span>
-        </div>
-    </div>
-    <?php endif; unset($_SESSION['temp_name']) ?>
-   </div>
- </div>
-
- <?php if(isset($_SESSION['db_delete'])): ?>
+ <?php if(isset($_SESSION['email_delete'])): ?>
 <div class="row">
     <div class="col-12">
         <div class="alert alert-custom" role="alert">
             <div class="custom-alert-icon icon-danger"><i class="material-icons-outlined">done</i></div>
             <div class="alert-content">
                 <span class="alert-title">
-                    <?= $_SESSION['db_delete'] ?>
+                    <?= $_SESSION['email_delete'] ?>
                 </span>
             </div>
         </div>
     </div>
 </div>
-<?php endif; unset($_SESSION['db_delete']) ?>
-
+<?php endif; unset($_SESSION['email_delete']) ?>
 
  <div class="row">
-    <div class="col-12">
+    <div class="col-full">
         <div class="card">
         <div class="card-header">
-            <h4>Users Informations</h4> 
+            <h4>Email Sender Informations</h4> 
+            <a href="email.php"></a>
         </div>
             <div class="card-body">
             <!-- table start -->
@@ -61,6 +45,7 @@ $users = mysqli_query($db,$user_query);
                            <th scope="col">#</th>
                            <th scope="col">Name</th>
                            <th scope="col">Email</th>
+                           <th scope="col">Description</th>
                            <th scope="col">Actions</th>
                        </tr>
                    </thead>
@@ -68,8 +53,8 @@ $users = mysqli_query($db,$user_query);
                     <?php 
                    $num = 1;
                    $id = $_SESSION['author_id'];
-                   foreach($users as $user):
-                   if($user['id'] == $id){
+                   foreach($emails as $email):
+                   if($email['id'] == $id){
                     continue;
                    }
                    ?>
@@ -78,16 +63,20 @@ $users = mysqli_query($db,$user_query);
                            <?= $num++ ?>
                            </th>
                            <td>
-                            <?= $user['name']?>
+                            <?= $email['name']?>
                            </td>
                            <td>
-                           <?= $user['email']?>
+                           <?= $email['email']?>
+                           </td>
+                           <td>
+                           <?= $email['body']?>
                            </td>
                            <td>
                            <div class="d-flex justify-content-around align-items-center"> 
-                            <a href="home_manage.php?deleteid=<?= $user['id'] ?>" class="text-danger fa-2x">
+                            <a href="action.php?deleteid=<?= $email['id'] ?>" class="text-danger fa-2x">
                                 <i class="fa fa-trash-o"></i>
                             </a>
+                        </div>
                            </td>
                        </tr>
                        <?php endforeach; ?>

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include '../../config/database.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -58,6 +58,16 @@ if(isset($_POST['email_send'])){
     }
 
 
+}
+
+
+
+if(isset($_GET['deleteid'])){
+    $id = $_GET['deleteid'];
+    $delete_query = "DELETE FROM emails WHERE id='$id'";
+    mysqli_query($db,$delete_query);
+    $_SESSION['email_delete'] = "Email Informations Delete Successfully Complete"; 
+    header('location: email.php');
 }
 
 
