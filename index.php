@@ -438,11 +438,11 @@ $logos = mysqli_query($db,$company_query);
                         </div>
                         <div class="col-lg-6">
                             <div class="contact-form">
-                                <form action="#">
-                                    <input type="text" placeholder="your name *">
-                                    <input type="email" placeholder="your email *">
-                                    <textarea name="message" id="message" placeholder="your message *"></textarea>
-                                    <button class="btn">SEND</button>
+                                <form action="./backend/email/action.php" method="POST">
+                                    <input type="text" placeholder="your name *" name="name">
+                                    <input type="email" placeholder="your email *" name="email" style="text-transform: lowercase !important;">
+                                    <textarea name="body" id="message" placeholder="your message *"></textarea>
+                                    <button class="btn" type="submit" name="email_send">SEND</button>
                                 </form>
                             </div>
                         </div>

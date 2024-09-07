@@ -25,7 +25,7 @@ if (isset($_POST["registerbtn"])) {
       $flag=true;
    }else{
       $_SESSION["old_name"] = $name;
-      header("Location: register.php");
+      // header("Location: register.php");
    }
 
  // email validation
@@ -39,7 +39,7 @@ if (isset($_POST["registerbtn"])) {
       $flag=true;
    }else{
       $_SESSION["old_email"] = $email;
-      header("Location: register.php");
+      // header("Location: register.php");
    }
 
     // password validation
@@ -49,7 +49,7 @@ if (isset($_POST["registerbtn"])) {
       $flag=true;
    }else{
       $_SESSION["old_pass"] = $password;
-      header("Location: register.php");
+      // header("Location: register.php");
    }
 
    // cpassword validation
@@ -59,7 +59,7 @@ if (isset($_POST["registerbtn"])) {
       $flag=true;
    }else{
       $_SESSION["old_cpass"] = $password;
-      header("Location: register.php");
+      // header("Location: register.php");
    }
 
    // password Regex validation
