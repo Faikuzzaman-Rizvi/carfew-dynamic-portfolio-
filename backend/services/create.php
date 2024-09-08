@@ -16,11 +16,11 @@ include '../../public/fonts/fonts.php';
             <div class="card-body">
                 <form action="store.php" method="POST">
                     <label for="exampleInputEmail1" class="form-label my-2">Service Title</label>
-                    <input name="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $service['title'] ?>">
+                    <input name="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"">
                     <label for="exampleInputEmail1" class="form-label my-2">Service Description</label>
-                    <textarea name="description" type="email" class="form-control" rows="5" value="<?= $service['description'] ?>"> </textarea>
+                    <textarea name="description" type="email" class="form-control" rows="5""> </textarea>
                     <label for="exampleInputEmail1" class="form-label my-2">Icon</label>
-                    <input name="icon" type="text" readonly class="form-control" id="updateicon" aria-describedby="emailHelp" value="<?= $service['icon'] ?>">
+                    <input name="icon" type="text" readonly class="form-control" id="updateicon" aria-describedby="emailHelp"">
                     <div class="card my-2">
                         <div class="card-body fa-2x" style="overflow-y: scroll; overflow-x:hidden; height:300px;">
                             <?php foreach ($fonts as $font): ?>
