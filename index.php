@@ -56,6 +56,7 @@ $logos = mysqli_query($db,$company_query);
         <link rel="stylesheet" href="./public/frontend/css/animate.min.css">
         <link rel="stylesheet" href="./public/frontend/css/magnific-popup.css">
         <link rel="stylesheet" href="./public/frontend/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="./public/frontend/css/flaticon.css">
         <link rel="stylesheet" href="./public/frontend/css/slick.css">
@@ -86,8 +87,8 @@ $logos = mysqli_query($db,$company_query);
                         <div class="col-xl-12">
                             <div class="main-menu">
                                 <nav class="navbar navbar-expand-lg">
-                                    <a href="index.html" class="navbar-brand logo-sticky-none"><img src="./public/frontend/img/logo/logo.png" alt="Logo"></a>
-                                    <a href="index.html" class="navbar-brand s-logo-none"><img src="./public/frontend/img/logo/s_logo.png" alt="Logo"></a>
+                                    <a href="./index.php" class="navbar-brand logo-sticky-none" ><i style="font-size: 25px; display:flex; gap:10px; font-weight:900; color:#8CC090; letter-spacing: 3px;" class="fa-brands fa-r-project">Rizvi</i></a>
+                                    <a href="./index.php" class="navbar-brand s-logo-none"><i style="font-size: 25px; display:flex; gap:10px; font-weight:900; color:#8CC090; letter-spacing: 3px;" class="fa-brands fa-r-project">Rizvi</i></a>
                                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                                         data-target="#navbarNav">
                                         <span class="navbar-icon"></span>
@@ -125,8 +126,8 @@ $logos = mysqli_query($db,$company_query);
                     </button>
                 </div>
                 <div class="logo-side mb-30">
-                    <a href="index-2.html">
-                        <img src="./public/frontend/img/logo/logo.png" alt="" />
+                    <a href="./index.php">
+                    <i style="font-size: 25px; display:flex; gap:10px; font-weight:900; color:#8CC090; letter-spacing: 3px;" class="fa-brands fa-r-project">Rizvi</i>
                     </a>
                 </div>
                 <div class="side-info mb-30">
@@ -138,9 +139,9 @@ $logos = mysqli_query($db,$company_query);
                     <div class="contact-list mb-30">
                         <h4>Phone Number</h4>
                         <?php if(isset($_SESSION['author_id'])) : ?>
-                        <p><?= $user['number'] ?></p>
+                        <p>+88<?= $user['number'] ?></p>
                         <?php else: ?>
-                        <p><?= $user['number'] ?></p>
+                        <p>+88<?= $user['number'] ?></p>
                         <?php endif; ?>
                     </div>
                     <div class="contact-list mb-30">
@@ -217,7 +218,7 @@ $logos = mysqli_query($db,$company_query);
                                 <?php if($user['image_about'] == 'defult2.png') : ?>
                                 <img src="./public/uploads/defult/<?= $user['image_about'] ?>" style="width: 650px; height: 750px;" alt="" >
                                 <?php else: ?>
-                                    <img src="./public/uploads/about_img/<?= $user['image_about'] ?>" style="width: 600px; height: 750px;" alt="" >
+                                    <img src="./public/uploads/about_img/<?= $user['image_about'] ?>" style="width: 600px; height: 850px;" alt="" >
                                     <?php endif; ?>
                             </div>
                         </div>
@@ -233,7 +234,7 @@ $logos = mysqli_query($db,$company_query);
 
                             <?php endforeach; ?>
                                 
-                                <h3>Education:</h3>
+                                <h3>Skills:</h3>
                             </div>
                             <!-- Education Item -->
                             <?php foreach($educations as $education) : ?>
@@ -294,7 +295,7 @@ $logos = mysqli_query($db,$company_query);
                         <div class="col-xl-6 col-lg-8">
                             <div class="section-title text-center mb-70">
                                 <span>Portfolio Showcase</span>
-                                <h2>My Recent Best Works</h2>
+                                <h2>My Recent tours places</h2>
                             </div>
                         </div>
                     </div>
@@ -422,9 +423,9 @@ $logos = mysqli_query($db,$company_query);
                                         <?php endif; ?>
 
                                         <?php if(isset($_SESSION['author_id'])) : ?>
-                                        <li><i class="fas fa-headphones"></i><span>Phone :</span><?= $user['number'] ?></li>
+                                        <li><i class="fas fa-headphones"></i><span>Phone :</span>+88<?= $user['number'] ?></li>
                                         <?php else: ?>
-                                            <li><i class="fas fa-headphones"></i><span>Phone :</span><?= $user['number'] ?></li>
+                                            <li><i class="fas fa-headphones"></i><span>Phone :</span>+88<?= $user['number'] ?></li>
                                         <?php endif; ?>
 
                                         <?php if(isset($_SESSION['author_id'])) : ?>

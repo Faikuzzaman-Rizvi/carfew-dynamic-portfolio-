@@ -33,7 +33,7 @@ $user = mysqli_fetch_assoc($connect);
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
     <!-- Title -->
-    <title>Neptune - Responsive Admin Dashboard Template</title>
+    <title>Carfew</title>
 
     <!-- Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -111,7 +111,7 @@ $user = mysqli_fetch_assoc($connect);
                     </li>
 
                     <li class="<?=($link == 'company.php') ?'active-page' : '' ?>">
-                        <a href="../company/company.php"><i style="font-size: 25px;" class="fa-brands fa-r-project"></i>company</a>
+                        <a href="../company/company.php"><i style="font-size: 25px;" class="fa-solid fa-building"></i>company</a>
                     </li>
                     <li class="<?=($link == 'email.php.php') ?'active-page' : '' ?>">
                         <a href="../email/email.php"><i style="font-size: 25px;" class="fa-solid fa-file-signature"></i>Contact</a>

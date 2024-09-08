@@ -54,7 +54,7 @@ session_start();
         <div class="app-auth-background"></div>
         <div class="app-auth-container">
             <div class="logo">
-                <a href="index.html">Neptune</a>
+                <a href="index.html">Carfew</a>
             </div>
             <p class="auth-description">Please enter your credentials to create an account.<br>Already have an account? <a href="login.php">Sign In</a></p>
             <form action="manage.php" method="POST">

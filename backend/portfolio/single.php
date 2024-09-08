@@ -1,6 +1,7 @@
 <?php
 
 include "../../config/database.php";
+session_start();
 
 if(isset($_GET['singleid'])){
     $id = $_GET['singleid'];
@@ -14,6 +15,19 @@ if(isset($_GET['singleid'])){
 
 }
 
+if(isset($_SESSION['author_id'])){
+    
+    $id = $_SESSION['author_id'];
+    $users_query = "SELECT * FROM users WHERE  id='$id' ";
+    $connect = mysqli_query($db,$users_query);
+    $user = mysqli_fetch_assoc($connect);
+
+}else{
+    $users_query = "SELECT * FROM users";
+    $connect = mysqli_query($db,$users_query);
+    $user = mysqli_fetch_assoc($connect); 
+}
+
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -22,11 +36,11 @@ if(isset($_GET['singleid'])){
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Personal Portfolio</title>
+        <title>Rizvi- Personal Portfolio</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" type="image/x-icon" href="../../public/frontend/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../../public/frontend/img/favicon2.png">
         <!-- Place favicon.ico in the root directory -->
 
 		<!-- CSS here -->
@@ -40,6 +54,7 @@ if(isset($_GET['singleid'])){
         <link rel="stylesheet" href="../../public/frontend/css/default.css">
         <link rel="stylesheet" href="../../public/frontend/css/style.css">
         <link rel="stylesheet" href="../../public/frontend/css/responsive.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body class="theme-bg">
 
@@ -63,8 +78,8 @@ if(isset($_GET['singleid'])){
                         <div class="col-xl-12">
                             <div class="main-menu">
                                 <nav class="navbar navbar-expand-lg">
-                                    <a href="index.html" class="navbar-brand logo-sticky-none"><img src="../../public/frontend/img/logo/logo.png" alt="Logo"></a>
-                                    <a href="index.html" class="navbar-brand s-logo-none"><img src="../../public/frontend/img/logo/s_logo.png" alt="Logo"></a>
+                                    <a href="../../index.php" class="navbar-brand logo-sticky-none"><i style="font-size: 25px; display:flex; gap:10px; font-weight:900; color:#8CC090; letter-spacing: 3px;" class="fa-brands fa-r-project">Rizvi</i></a>
+                                    <a href="../../index.php" class="navbar-brand s-logo-none"><i style="font-size: 25px; display:flex; gap:10px; font-weight:900; color:#8CC090; letter-spacing: 3px;" class="fa-brands fa-r-project">Rizvi</i></a>
                                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                                         data-target="#navbarNav">
                                         <span class="navbar-icon"></span>
@@ -97,8 +112,8 @@ if(isset($_GET['singleid'])){
                     </button>
                 </div>
                 <div class="logo-side mb-30">
-                    <a href="index-2.html">
-                        <img src="../../public/frontend/img/logo/logo.png" alt="" />
+                    <a href="../../index.php">
+                    <i style="font-size: 25px; display:flex; gap:10px; font-weight:900; color:#8CC090; letter-spacing: 3px;" class="fa-brands fa-r-project">Rizvi</i>
                     </a>
                 </div>
                 <div class="side-info mb-30">
@@ -176,14 +191,16 @@ if(isset($_GET['singleid'])){
                                     <ul>
                                         <li>
                                             <div class="post-avatar-img">
-                                                <img src="../../public/frontend/img/blog/post_avatar_img.png" alt="img">
+                                                <img src="../../public/uploads/profile/<?= $user['image'] ?>" style="width:100px; height: 100px;; object-fit:contain" alt="img">
                                             </div>
                                             <div class="post-avatar-content">
-                                                <h5>Thomas Herlihy</h5>
-                                                <p>Vehicula dolor amet consectetur adipiscing elit. Cras sollicitudin, tellus vitae
-                                                    condimem
-                                                    egestliberos dolor auctor
-                                                    tellus.</p>
+                                            <?php if(isset($_SESSION['author_id'])) : ?>
+                                                <h5 class="wow fadeInUp" data-wow-delay="0.4s"><?= $user['name'] ?></h5>
+                                                <?php else:?>
+                                                    <h5 class="wow fadeInUp" data-wow-delay="0.4s"><?= $user['name'] ?></h5>
+                                                <?php endif; ?>
+                                                                
+                                                <p>Immerse yourself in a world where creativity meets precision. My portfolio showcases the dynamic fusion of modern web design and cutting-edge technology. Dive in and explore how I transform ideas into stunning, functional digital experiences. Let's build something extraordinary together!</p>
                                                 <div class="post-avatar-social mt-15">
                                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                                                     <a href="#"><i class="fab fa-twitter"></i></a>

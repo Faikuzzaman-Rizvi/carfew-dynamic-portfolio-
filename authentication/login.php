@@ -19,7 +19,7 @@ if (isset($_SESSION['author_id'])){
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
     <!-- Title -->
-    <title>Neptune - Responsive Admin Dashboard Template</title>
+    <title>Carfew</title>
 
     <!-- Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -52,7 +52,7 @@ if (isset($_SESSION['author_id'])){
         </div>
         <div class="app-auth-container">
             <div class="logo">
-                <a href="index.html">Neptune</a>
+                <a href="index.html">Carfew</a>
             </div>
             <p class="auth-description">Please sign-in to your account and continue to the dashboard.<br>Don't have an account? <a href="register.php">Sign Up</a></p>
             <!-- register complete -->
