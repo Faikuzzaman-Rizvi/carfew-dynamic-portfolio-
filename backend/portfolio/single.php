@@ -227,7 +227,7 @@ if(isset($_SESSION['author_id'])){
                     <div class="row align-items-center">
                         <div class="col-12">
                             <div class="copyright-text text-center">
-                                <p>Copyright© <span>Kufa</span> | All Rights Reserved</p>
+                                <p>Copyright© <span>Rizvi</span> | All Rights Reserved</p>
                             </div>
                         </div>
                     </div>
